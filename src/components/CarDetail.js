@@ -5,7 +5,7 @@ import Item from './Item';
 import ItemSection from './ItemSection';
 
 const CarDetail = ({cars}) => {
-  const {imageStyle} = styles;
+  const {imageStyle, headerContainer, headerText} = styles;
 
   const renderList = () => {
     return (
@@ -15,9 +15,10 @@ const CarDetail = ({cars}) => {
             {car.model.map((model) => (
               <Item key={model.name}>
                 <ItemSection>
-                  <Text>
-                    {car.brand} {model.name}
-                  </Text>
+                  <View style={headerContainer}>
+                    <Text style={headerText}>{car.brand}</Text>
+                    <Text style={headerText}>{model.name}</Text>
+                  </View>
                 </ItemSection>
                 <ItemSection>
                   <Text>{model.url}</Text>
@@ -39,7 +40,17 @@ const CarDetail = ({cars}) => {
 const styles = {
   imageStyle: {
     height: 200,
-    width: 500,
+    flex: 1,
+    width: 0,
+  },
+  headerContainer: {
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
+  headerText: {
+    fontSize: 18,
+    fontWeight: '500',
+    textTransform: 'uppercase',
   },
 };
 
