@@ -3,14 +3,19 @@
  */
 
 import React from 'react';
-import {AppRegistry} from 'react-native';
+import {AppRegistry, View} from 'react-native';
 
 import {name as appName} from './app.json';
 import Header from './src/components/Header';
-// import App from './App';
+import CarList from './src/components/CarList';
 
 const App = () => {
-  return <Header />;
+  return (
+    <View>
+      <Header title={'Cars'} />
+      <CarList />
+    </View>
+  );
 };
 
 AppRegistry.registerComponent(appName, () => App);
