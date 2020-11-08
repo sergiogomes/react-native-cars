@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text} from 'react-native';
+import {ScrollView} from 'react-native';
 import Axios from 'axios';
 
 import CarDetail from './CarDetail';
@@ -14,10 +14,9 @@ const CarList = () => {
   }, []);
 
   return (
-    <View>
-      <Text>Car List</Text>
+    <ScrollView>
       <CarDetail cars={carList} />
-    </View>
+    </ScrollView>
   );
 };
 
