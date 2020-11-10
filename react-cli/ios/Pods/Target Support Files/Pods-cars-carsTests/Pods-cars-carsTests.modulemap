@@ -1,0 +1,6 @@
+module Pods_cars_carsTests {
+  umbrella header "Pods-cars-carsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
